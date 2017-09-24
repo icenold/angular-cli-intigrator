@@ -1,0 +1,4 @@
+/*
+paste this in your route or controller function pointing to rootUrl("/")
+*/
+return \File::get(public_path().'/app-frontend/index.html');

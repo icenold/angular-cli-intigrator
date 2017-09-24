@@ -1,0 +1,9 @@
+public IActionResult Index() 
+{
+    /*
+    paste this in your controller action pointing to rootUrl("/")
+    */
+
+    return File("~/app-frontend/index.html","text/html");
+}
+
