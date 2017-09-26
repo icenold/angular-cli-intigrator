@@ -1,9 +1,19 @@
-public IActionResult Index() 
-{
-    /*
-    paste this in your controller action pointing to rootUrl("/")
-    */
+//paste this using statement if it doesn't exist
+using Microsoft.AspNetCore.Hosting;
 
-    return File("~/app-frontend/index.html","text/html");
+//paste this private variable and constructor in your controller
+private IHostingEnvironment _hostingEnvironment;
+public HomeController(IHostingEnvironment environment)
+{
+    this._hostingEnvironment = environment;
+}
+
+//paste this action in your controller
+//this action must be routed to the root of your URL('/')
+public IActionResult Index()
+{
+    var htmlPath = System.IO.Path.Combine(this._hostingEnvironment.WebRootPath,"app-frontend/index.html");
+    var htmlString = System.IO.File.ReadAllText(htmlPath);
+    return Content(htmlString,"text/html");
 }
 
