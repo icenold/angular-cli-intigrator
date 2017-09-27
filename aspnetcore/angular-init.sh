@@ -1,5 +1,4 @@
-ng new AppFrontEnd -st -si --routing=true;
+ng new AppFrontEnd -st -si -sg --routing=true;
 cd AppFrontEnd;
-rm -rf .git;
 npm install;
 cd ..;
